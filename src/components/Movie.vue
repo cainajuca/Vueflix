@@ -6,7 +6,12 @@
 
         <h4>{{movie.title}}</h4>
 
-        <img id="poster" :src="posterBaseUrl+posterSize+movie.poster_path" alt="poster not available">
+        <img
+            v-if="movie.poster_path != null"
+            id="poster"
+            :src="posterBaseUrl+posterSize+movie.poster_path"
+        >
+        <p id="no-poster" v-else>poster not available</p>
 
     </div>
 </template>
@@ -34,7 +39,7 @@ export default {
     margin: 10px;
 }
 
-#poster {
+#no-poster {
     color: red;
 }
 

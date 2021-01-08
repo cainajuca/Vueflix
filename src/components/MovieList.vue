@@ -50,11 +50,15 @@ export default {
                 MoviesTMDB.get(this.searchField)
                 .then((res) => {
 
-                // a API retorna no maximo 20 resultados
-                // console.log(res.data.results)
+                  // a API retorna no maximo 20 resultados
+                  // console.log(res.data.results)
 
-                this.movies = res.data.results;
+                  this.movies = res.data.results;
                 })
+                .catch(error => {
+                  console.log(error);
+                })
+
             } else {
                 alert("You must search for something to get results.");
             }
