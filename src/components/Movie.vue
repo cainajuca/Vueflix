@@ -11,7 +11,7 @@
             id="poster"
             :src="posterBaseUrl+posterSize+movie.poster_path"
         >
-        <p id="no-poster" v-else>poster not available</p>
+        <img src="logo.png" id="no-poster" alt="n veio" v-else>
 
     </div>
 </template>

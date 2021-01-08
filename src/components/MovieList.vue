@@ -7,7 +7,7 @@
             <button @click="procurarFilme">Procurar</button>
         </div>
 
-        <p id="pre-list">Lista de filmes relacionados:</p>
+        <strong id="pre-list">Lista de filmes relacionados:</strong>
 
         <div id="movies-list" v-for="(movie, index) in movies" :key="movie.id">
             

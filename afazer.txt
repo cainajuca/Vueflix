@@ -16,9 +16,7 @@ Melhorias adiadas:
     Criar button em Movie.vue para adicioná-lo à
     lista de filmes a assistir
 
-    tratar erro de quando nao se acha poster do filme
-        a msg ja aparece na tela mas ta gerando erro de
-        GET no console
+    adicionar uma imagem para falta de poster em Movie.vue
 
 
 
