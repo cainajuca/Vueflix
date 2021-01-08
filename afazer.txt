@@ -1,0 +1,25 @@
+Próximos passos:
+
+    Criar o usuário e seu cadastro, já com um
+    array de perfis para serem adicionados.
+
+    Cada perfil deve ter um array de filmes a assistir
+
+Melhorias adiadas:
+
+    Utilizar o bulma:
+        para buttons
+        cards p exibir filmes
+        cards p exibir profiles
+
+    Criar button em Movie.vue para adicioná-lo à
+    lista de filmes a assistir
+
+    tratar erro de quando nao se acha poster do filme
+        a msg ja aparece na tela mas ta gerando erro de
+        GET no console
+
+
+
+
+

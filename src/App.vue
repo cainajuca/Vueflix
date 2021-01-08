@@ -1,26 +1,10 @@
-/*
-Vueflix
-https://vueflix.com
-
-
-
-
-*/
-
 <template>
   <div id="app">
 
-    <div id="search">
-      <input type="text" placeholder="search" v-model="searchField">
-      <button @click="procurarFilme">Procurar</button>
-    </div>
+    <button id="show-movies" @click="showMovies" v-if="!showMoviesList">Procurar Filmes</button>
 
-    <p id="pre-list">Lista de filmes relacionados:</p>
-
-    <div id="movies-list" v-for="(movie, index) in movies" :key="movie.id">
-      
-      <Movie :movie="movies[index]"/>
-
+    <div id="show-movies-list" v-if="showMoviesList">
+      <MovieList/>
     </div>
 
   </div>
@@ -28,61 +12,37 @@ https://vueflix.com
 
 <script>
 
-import axios from 'axios';
-import Movie from './components/Movie'
+// import axios from 'axios';
+import MovieList from './components/MovieList';
 
 export default {
   name: 'App',
 
   data() {
     return {
-
-      searchField: "",
-      baseURL: 'https://api.themoviedb.org/3/',
-      APIKEY: '7831c72bff377af6c56119a4568f8216',
-
-      movies: []
+      showMoviesList: false
     }
   },
 
+  props: {
+    
+  },
+
   components: {
-    Movie
+    MovieList
   },
 
   methods: {
 
+    showMovies: function() {
+      this.showMoviesList = true;
+    },
 
-    procurarFilme: function() {
-
-      if(this.searchField != "") {
-        // esvaziar movies
-        this.movies = null;
-      }
-    
-      axios.get(this.baseURL+"search/movie?api_key="+this.APIKEY+"&query="+this.searchField)
-      .then((res) => {
-
-        // a API retorna no maximo 20 resultados
-        // console.log(res.data.results)
-
-        this.movies = res.data.results;
-
-        console.log(res.data);
-      })
-    }
   },
 
   created: function() {
 
-    axios.get(this.baseURL+"configuration?api_key="+this.APIKEY)
-    .then((res) => {
-
-      this.posterBaseUrl = res.data.images.base_url
-      console.log(this.posterBaseUrl);
-
-      this.posterSize = res.data.images.poster_sizes[1]
-      console.log(this.posterSize);
-    })
+    // faz-se uma vez ao inicio
 
   }
 }
@@ -124,6 +84,10 @@ export default {
   display: inline-block;
 }
 
+#show-movies {
+  margin: 2%;
+}
+
 </style>
 
 
@@ -142,8 +106,9 @@ https://api.themoviedb.org/3/search/movie?api_key=7831c72bff377af6c56119a4568f82
 https://api.themoviedb.org/3/movie/<movie-id>?api_key=<APIKEY>
 
 
-
-
-
+/*
+Vueflix
+https://vueflix.com
+*/
 
 
