@@ -19,9 +19,8 @@ https://vueflix.com
 
     <div id="movies-list" v-for="(movie, index) in movies" :key="movie.id">
       
-      <!-- <p>{{index+1}}.</p> -->
-      
       <Movie :movie="movies[index]"/>
+
     </div>
 
   </div>
@@ -37,6 +36,7 @@ export default {
 
   data() {
     return {
+
       searchField: "",
       baseURL: 'https://api.themoviedb.org/3/',
       APIKEY: '7831c72bff377af6c56119a4568f8216',
@@ -50,37 +50,39 @@ export default {
   },
 
   methods: {
+
+
     procurarFilme: function() {
 
       if(this.searchField != "") {
         // esvaziar movies
-        while(this.movies.length) {
-          this.movies.pop();
-        }
+        this.movies = null;
       }
     
       axios.get(this.baseURL+"search/movie?api_key="+this.APIKEY+"&query="+this.searchField)
-      .then(res => {
+      .then((res) => {
 
         // a API retorna no maximo 20 resultados
         // console.log(res.data.results)
 
-        // percorre o resultado da pesquisa e guarda os nomes dos filmes relacionados em movies[]
-        for(var i=0; i<res.data.results.length; i++) {
-          this.movies.push(
-            {
-              id: res.data.results[i].id,
-              title: res.data.results[i].title
-            }
-          )
-        }
+        this.movies = res.data.results;
+
+        console.log(res.data);
       })
     }
   },
 
   created: function() {
 
-    // diz que aqui que se usa o axios. pesquisar depois
+    axios.get(this.baseURL+"configuration?api_key="+this.APIKEY)
+    .then((res) => {
+
+      this.posterBaseUrl = res.data.images.base_url
+      console.log(this.posterBaseUrl);
+
+      this.posterSize = res.data.images.poster_sizes[1]
+      console.log(this.posterSize);
+    })
 
   }
 }
@@ -102,7 +104,7 @@ export default {
 
 #search {
   height: 30px;
-  padding: 2% 0 1% 2%;
+  padding: 2% 0 2% 2%;
   margin: 2%;
   align-items: center;
 }
@@ -118,6 +120,8 @@ export default {
 #movies-list {
   margin-left: 10px;
   color: black;
+
+  display: inline-block;
 }
 
 </style>
