@@ -7,30 +7,34 @@
 
 			<div class="card-body">
 
-				<div class="form-group">
-					<input
-						required
-						type="email"
-						v-model="form.email"
-						class="form-control"
-						placeholder="E-mail"
-					>
-				</div>
+				<form action="#" @submit.prevent="login">
 
-				<div class="form-group">
-					<input
-						required
-						type="password"
-						v-model="form.password"
-						class="form-control"
-						placeholder="Senha"
-					>
-				</div>
+					<div class="form-group">
+						<input
+							required
+							type="email"
+							v-model="form.email"
+							class="form-control"
+							placeholder="E-mail"
+						>
+					</div>
 
-				<button @click="submit">Entrar</button>
-				<!-- <button class="btn btn-primary w-100">
-					Entrar
-				</button> -->
+					<div class="form-group">
+						<input
+							required
+							type="password"
+							v-model="form.password"
+							class="form-control"
+							placeholder="Senha"
+						>
+					</div>
+
+					<button type="submit" class="btn-submit">Entrar</button>
+					<!-- <button class="btn btn-primary w-100">
+						Entrar
+					</button> -->
+
+				</form>
 
 			</div>
 		</div>
@@ -49,7 +53,7 @@ export default {
 	},
 
 	methods: {
-		submit: function() {
+		login: function() {
 			console.log("Login realizado com sucesso!");
 			console.log(this.form);
 		}
