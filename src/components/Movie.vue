@@ -1,6 +1,9 @@
 <template>
     <div id="movie">
 
+        <!-- usar cards do bulma -->
+        <!-- https://www.youtube.com/watch?v=FijGmbJzPSM -->
+
         <h4>{{movie.title}}</h4>
 
         <img id="poster" :src="posterBaseUrl+posterSize+movie.poster_path" alt="poster not available">
