@@ -11,6 +11,7 @@ Melhorias adiadas:
         para buttons
         cards p exibir filmes
         cards p exibir profiles
+        card em Login.vue
 
     Criar button em Movie.vue para adicioná-lo à
     lista de filmes a assistir

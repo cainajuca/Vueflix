@@ -1,11 +1,13 @@
 <template>
   <div id="app">
 
-    <button id="show-movies" @click="showMovies" v-if="!showMoviesList">Procurar Filmes</button>
+    <router-view/>
+
+    <!-- <button id="show-movies" @click="showMovies" v-if="!showMoviesList">Procurar Filmes</button>
 
     <div id="show-movies-list" v-if="showMoviesList">
       <MovieList/>
-    </div>
+    </div> -->
 
   </div>
 </template>
@@ -13,7 +15,8 @@
 <script>
 
 // import axios from 'axios';
-import MovieList from './components/MovieList';
+// import MovieList from './components/MovieList';
+
 
 export default {
   name: 'App',
@@ -29,7 +32,7 @@ export default {
   },
 
   components: {
-    MovieList
+    // MovieList
   },
 
   methods: {
@@ -49,39 +52,13 @@ export default {
 </script>
 
 <style>
+
+
 #app {
   margin: 0;
   min-height: 500px;
   height: 100%;
   background-color: rgb(90, 247, 194);
-}
-
-#pre-list {
-  margin-left: 10px;
-  font-size: 20px;
-  color: red;
-}
-
-#search {
-  height: 30px;
-  padding: 2% 0 2% 2%;
-  margin: 2%;
-  align-items: center;
-}
-
-#search button {
-  height: 30px;
-}
-
-#search input {
-  height: 30px;
-}
-
-#movies-list {
-  margin-left: 10px;
-  color: black;
-
-  display: inline-block;
 }
 
 #show-movies {
@@ -112,3 +89,10 @@ https://vueflix.com
 */
 
 
+Caso alguém tenha alguma erro relacionado ao router adicionar # nos seus links, adicione:
+mode: 'history'
+no seu const router = new VueRouter
+Fica assim:
+const router = new VueRouter({
+	mode: 'history',
+        routes: [ ROTAS AQUI ]

@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Movie from './Movie';
+import MoviesTMDB from '../api/tmdb/index.js'
 export default {
     data() {
         return {
@@ -47,7 +47,7 @@ export default {
                 // esvaziar movies
                 this.movies = null;
 
-                axios.get(this.baseURL+"search/movie?api_key="+this.APIKEY+"&query="+this.searchField)
+                MoviesTMDB.get(this.searchField)
                 .then((res) => {
 
                 // a API retorna no maximo 20 resultados
@@ -64,6 +64,8 @@ export default {
 </script>
 
 <style>
+/* @import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap'); */
+
 #list {
   margin: 0;
   min-height: 500px;
@@ -72,9 +74,10 @@ export default {
 }
 
 #pre-list {
+  /* font-family: 'Mandali', sans-serif; */
   margin-left: 10px;
   font-size: 20px;
-  color: red;
+  color: blue;
 }
 
 #search {
