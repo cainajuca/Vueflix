@@ -11,7 +11,7 @@
             id="poster"
             :src="posterBaseUrl+posterSize+movie.poster_path"
         >
-        <img src="logo.png" id="no-poster" alt="n veio" v-else>
+        <img src="logo.png" id="no-poster" alt="achar img boa" v-else>
 
     </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             posterBaseUrl: "https://image.tmdb.org/t/p/",
-            posterSize: "w154"
+            posterSize: "w154" // w500, entre outros
         }
     },
 

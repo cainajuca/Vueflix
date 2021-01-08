@@ -3,27 +3,17 @@
 
     <router-view/>
 
-    <!-- <button id="show-movies" @click="showMovies" v-if="!showMoviesList">Procurar Filmes</button>
-
-    <div id="show-movies-list" v-if="showMoviesList">
-      <MovieList/>
-    </div> -->
-
   </div>
 </template>
 
 <script>
-
-// import axios from 'axios';
-// import MovieList from './components/MovieList';
-
 
 export default {
   name: 'App',
 
   data() {
     return {
-      showMoviesList: false
+      
     }
   },
 
@@ -32,13 +22,13 @@ export default {
   },
 
   components: {
-    // MovieList
+    
   },
 
   methods: {
 
     showMovies: function() {
-      this.showMoviesList = true;
+      
     },
 
   },
@@ -46,6 +36,7 @@ export default {
   created: function() {
 
     // faz-se uma vez ao inicio
+    // ver a diferença pra mounted:
 
   }
 }
