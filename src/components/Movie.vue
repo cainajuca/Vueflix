@@ -1,17 +1,23 @@
 <template>
-    <div>
+    <div id="movie">
 
         <h4>{{movie.title}}</h4>
 
-        <!-- <h4>Título: {{movie.title}}</h4> -->
-
-        <!-- inserir botao para adicionar filme a lista de favoritos -->
+        <img id="poster" :src="posterBaseUrl+posterSize+movie.poster_path" alt="poster not available">
 
     </div>
 </template>
 
 <script>
 export default {
+
+    data() {
+        return {
+            posterBaseUrl: "https://image.tmdb.org/t/p/",
+            posterSize: "w154"
+        }
+    },
+
     props: {
         movie: Object
     }
@@ -19,5 +25,14 @@ export default {
 </script>
 
 <style>
+
+#movie {
+    text-align: center;
+    margin: 10px;
+}
+
+#poster {
+    color: red;
+}
 
 </style>
