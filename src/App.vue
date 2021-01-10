@@ -1,45 +1,31 @@
 <template>
   <div id="app">
 
-    <router-view/>
+    <Nav />
+
+
+    <div class="auth-wrapper">
+			<div class="auth-inner">
+				<router-view/>
+			</div>
+		</div>
+    
 
   </div>
 </template>
 
 <script>
 
-export default {
-  name: 'App',
+  import Nav from './Nav.vue'
 
-  data() {
-    return {
-      
+  export default {
+    name: 'App',
+
+    components: {
+      Nav
     }
-  },
-
-  props: {
-    
-  },
-
-  components: {
-    
-  },
-
-  methods: {
-
-    showMovies: function() {
-      
-    },
-
-  },
-
-  created: function() {
-
-    // faz-se uma vez ao inicio
-    // ver a diferença pra mounted:
 
   }
-}
 </script>
 
 <style>

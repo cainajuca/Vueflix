@@ -26,6 +26,7 @@ export default {
         }
     },
 
+    // props used to get data from the parent
     props: {
         movie: Object
     }
