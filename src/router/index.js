@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MovieList from '../components/MovieList.vue'
-import Cadastro from '../components/auth/Register.vue'
+import Register from '../components/auth/Register.vue'
 import Login from '../components/auth/Login.vue'
-import Nav from '../components/Nav.vue'
+import Home from '../components/Home.vue'
+// import Nav from '../Nav.vue'
 
 Vue.use(VueRouter);
 
 export default 
 	new VueRouter({
+		mode: 'history',
 		routes: [
-			{ path: '/', component: Nav },
-			{ path: '/Login', component: Login },
-			{ path: '/cadastro', name: 'cadastro', component: Cadastro },
+			{ path: '/', component: Home },
+			{ path: '/login', component: Login },
+			{ path: '/register', name: 'register', component: Register },
 			{ path: '/list', name: 'movie-list', component: MovieList }
 		]
 	})

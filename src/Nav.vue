@@ -1,39 +1,48 @@
 <template>
   <div>
+
     <nav class="navbar navbar-expand navbar-light fixed-top">
+
 			<div class="container">
-				<a href="#" class="navbar-brand">Home</a>
+
+				<router-link to="/" href="#" class="navbar-brand">Home</router-link>
+
 				<div class="collapse navbar-collapse">
+
 					<ul class="navbar-nav ml-auto">
+
 						<li class="nav-item">
-							<a href="#" class="nav-link">Login</a>
+
+							<router-link to="/login" href="#" class="nav-link">Login</router-link>
+
 						</li>
+
 						<li class="nav-item">
-							<a href="#" class="nav-link">Sign up</a>
+
+							<router-link to="/register" href="#" class="nav-link">Sign up</router-link>
+
 						</li>
 					</ul>
 				</div>
 			</div>
     </nav>
-
-		<div class="auth-wrapper">
-			<div class="auth-inner">
-				Hello message
-			</div>
-		</div>
-
 	</div>
 </template>
 
 <script>
+
+
 	export default {
-		name: "Nav"
+
+		components: {
+			// Login
+		}
 	}
 </script>
 
 <style>
 
-	@import url('https//fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+	/* @import url('https//fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800'); */
 
 	* {
 		box-sizing: border-box;
@@ -44,12 +53,12 @@
 		min-height: 100vh;
 		display: flex;
 		font-weight: 400;
-		font-family: 'Fira Sans', sans-serif;
+		/* font-family: 'Fira Sans', sans-serif; */
 	}
 
 	h1, h2, h3, h4, h5, h6, label, span {
 		font-weight: 500;
-		font-family: 'Fira Sans', sans-serif;
+		/* font-family: 'Fira Sans', sans-serif; */
 	}
 
 	body, html, #app, #root, .auth-wrapper {
@@ -75,7 +84,9 @@
 
 	.auth-inner {
 		width: 450px;
+
 		margin: auto;
+
 		background: #FFFFFF;
 		box-shadow: 0px 14px 80px rgba(34,35,58,0.2);
 		padding: 40px 55px 45px 55px;

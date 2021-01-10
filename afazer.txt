@@ -18,6 +18,8 @@ Melhorias adiadas:
 
     adicionar uma imagem para falta de poster em Movie.vue
 
+    you really should get the Nav.vue style right
+
 
 
 

@@ -27,11 +27,11 @@ export default {
     data() {
         return {
 
-        searchField: "",
-        baseURL: 'https://api.themoviedb.org/3/',
-        APIKEY: '7831c72bff377af6c56119a4568f8216',
+          searchField: "",
+          baseURL: 'https://api.themoviedb.org/3/',
+          APIKEY: '7831c72bff377af6c56119a4568f8216',
 
-        movies: []
+          movies: []
         }
     },
 
@@ -48,16 +48,19 @@ export default {
                 this.movies = null;
 
                 MoviesTMDB.get(this.searchField)
-                .then((res) => {
+                .then(
+                  res => {
 
-                  // a API retorna no maximo 20 resultados
-                  // console.log(res.data.results)
+                    // a API retorna no maximo 20 resultados
+                    // console.log(res.data.results)
 
-                  this.movies = res.data.results;
-                })
-                .catch(error => {
-                  console.log(error);
-                })
+                    this.movies = res.data.results;
+                  }
+                ).catch(
+                  error => {
+                    console.log(error);
+                  }
+                )
 
             } else {
                 alert("You must search for something to get results.");
