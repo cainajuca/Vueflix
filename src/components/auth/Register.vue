@@ -63,19 +63,32 @@
 			}
 		},
 
+		// "name": "caina",
+		// "email": "cainajuca2@gmail.com",
+		// "password": "123456",
+		// "birthDate": "04/03/1997"
+
 		methods: {
 			handleSubmit: function() {
+				// const data = {
+				// 	first_name: this.first_name,
+				// 	last_name: this.last_name,
+				// 	email: this.email,
+				// 	password: this.password,
+				// 	password_confirm: this.password_confirm,
+				// };
 				const data = {
-					first_name: this.first_name,
-					last_name: this.last_name,
+					name: this.first_name,
 					email: this.email,
 					password: this.password,
-					password_confirm: this.password_confirm,
-
+					birthDate: "04/03/1997"
 				};
 				
-				// where's the backend?
-				axios.post('http://localhost:8000/register', data)
+				console.log(data);
+				// frontend na porta 8080
+				// backend na porta 3000
+				// vai dar erro no password confirm
+				axios.post('http://localhost:3000/auth/register', data)
 					.then(
 						res => {
 							console.log(res)
@@ -84,7 +97,7 @@
 						err => {
 							console.log(err)
 						}
-					)
+					);
 			}
 		}
 	}
